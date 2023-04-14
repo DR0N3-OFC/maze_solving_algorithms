@@ -1,0 +1,11 @@
+D:\Labirinto\labirinto_csharp\Maze-Solving\Labirinto\bin\Debug\Labirinto.exe.config
+D:\Labirinto\labirinto_csharp\Maze-Solving\Labirinto\bin\Debug\Labirinto.exe
+D:\Labirinto\labirinto_csharp\Maze-Solving\Labirinto\bin\Debug\Labirinto.pdb
+D:\Labirinto\labirinto_csharp\Maze-Solving\Labirinto\obj\Debug\Labirinto.csproj.AssemblyReference.cache
+D:\Labirinto\labirinto_csharp\Maze-Solving\Labirinto\obj\Debug\Labirinto.csproj.SuggestedBindingRedirects.cache
+D:\Labirinto\labirinto_csharp\Maze-Solving\Labirinto\obj\Debug\Labirinto.FormMain.resources
+D:\Labirinto\labirinto_csharp\Maze-Solving\Labirinto\obj\Debug\Labirinto.Properties.Resources.resources
+D:\Labirinto\labirinto_csharp\Maze-Solving\Labirinto\obj\Debug\Labirinto.csproj.GenerateResource.cache
+D:\Labirinto\labirinto_csharp\Maze-Solving\Labirinto\obj\Debug\Labirinto.csproj.CoreCompileInputs.cache
+D:\Labirinto\labirinto_csharp\Maze-Solving\Labirinto\obj\Debug\Labirinto.exe
+D:\Labirinto\labirinto_csharp\Maze-Solving\Labirinto\obj\Debug\Labirinto.pdb
