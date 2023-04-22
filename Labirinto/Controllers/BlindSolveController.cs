@@ -1,6 +1,7 @@
 ﻿using Labirinto.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -8,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace Labirinto.Controllers
 {
-    public class SolveController //RESOLVER MAZE
+    public class BlindSolveController
     {
-        private List<Point> visited; // LISTA DE PONTOS 
-        private MazeNode[,] maze;   //MAZE
+        private List<Point> visited;
+        private MazeNode[,] maze;
         public int steps = 0;
 
-        public SolveController(MazeNode[,] maze) // CONTROLE
+        public BlindSolveController(MazeNode[,] maze)
         {
             visited = new List<Point>();
             this.maze = maze;
@@ -22,12 +23,12 @@ namespace Labirinto.Controllers
 
         internal MazeNode[,] Maze { set => maze = value; }
         
-        public bool Solve(ref List<MazeNode> path) // METODO RESOLVE
+        public bool FindPath(ref List<MazeNode> path, ref List<MazeNode> wrongPath)
         {
-            int fx = maze.GetLength(0) - 1;  //MATRIZ
+            int fx = maze.GetLength(0) - 1;
             int fy = maze.GetLength(1) - 1;
 
-            MyStack<MazeNode> stack = new MyStack<MazeNode>();  // PILHA , O ALGORITMO UTILIZA A PILHA PARA SOLUÇÃO DO MAZE.
+            NodeStack<MazeNode> stack = new NodeStack<MazeNode>();
 
             MazeNode temp = maze[0, 0];
             path.Add(temp);
@@ -61,7 +62,7 @@ namespace Labirinto.Controllers
                 {
                     visited.Add(temp.Center);
                     path.Remove(temp);
-                    stack.Pop();
+                    wrongPath.Add(stack.Pop());
                     steps++;
                 }
 

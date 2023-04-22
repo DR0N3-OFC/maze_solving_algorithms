@@ -1,7 +1,9 @@
 ﻿using Labirinto.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,32 +16,34 @@ namespace Labirinto.Controllers
 	{
         private MazeNode[,] maze;
         private List<MazeNode> ClosedList;
-        private MyPriorityQueue<MazeNode> OpenList;
+        private PriorityNodeQueue<MazeNode> OpenList;
         public int steps = 0;
 
         public HeuristicSolveController(MazeNode[,] maze)
         {
-            OpenList = new MyPriorityQueue<MazeNode>();
+            OpenList = new PriorityNodeQueue<MazeNode>();
             ClosedList = new List<MazeNode>();
             this.maze = maze;
         }
 
         internal MazeNode[,] Maze { set => maze = value; }
 
-        public bool FindPath(ref List<MazeNode> path)
+        public bool FindPath(ref List<MazeNode> path, ref List<MazeNode> wrongPath)
         {
             int fx = maze.GetLength(0) - 1;
             int fy = maze.GetLength(1) - 1;
 
+            List<MazeNode> wrongPathAux = new List<MazeNode>();
+
             MazeNode start = maze[0, 0];
             MazeNode end = maze[fx, fy];
+            int neighCount = start.Neighbors.Count(x => x != null);
 
-            start.Custo = 0;
-            start.Heuristica = Heuristica(start, end);
+            start.Cost = 0;
+            start.Heuristic = Heuristic(start, end, neighCount);
 
             MazeNode current = start;
 
-            // add start node to Open List
             OpenList.Enqueue(start, start.F);
 
             path.Add(start);
@@ -49,10 +53,11 @@ namespace Labirinto.Controllers
                 current = OpenList.Dequeue();
 
                 ClosedList.Add(current);
+                wrongPathAux.Add(current);
+                steps++;
 
                 foreach (MazeNode neighbor in current.Neighbors)
                 {
-                    steps++;
                     if (!ClosedList.Contains(neighbor) && neighbor != null)
                     {
                         bool isFound = false;
@@ -62,21 +67,21 @@ namespace Labirinto.Controllers
                         }
                         if (!isFound && neighbor != null)
                         {
-                            neighbor.Heuristica = Heuristica(neighbor, end);
-                            neighbor.Custo = neighbor.Bounds.Width + neighbor.Predecessor.Custo;
+                            neighCount = neighbor.Neighbors.Count(x => x != null);
+                            neighbor.Heuristic = Heuristic(neighbor, end, neighCount);
+                            neighbor.Cost = neighbor.Bounds.Width + neighbor.Predecessor.Cost;
                             OpenList.Enqueue(neighbor, neighbor.F);
+                            steps++;
                         }
                     }
                 }
             }
 
-            // construct path, if end was not closed return null
             if (!ClosedList.Contains(end))
             {
                 return false;
             }
-
-            // if all good, return path
+             
             MazeNode temp = ClosedList[ClosedList.IndexOf(current)];
             if (temp == null) return false;
             do
@@ -84,13 +89,26 @@ namespace Labirinto.Controllers
                 path.Add(temp);
                 temp = temp.Predecessor;
             } while (temp != start && temp != null);
-            path.Reverse();
+
+            foreach (MazeNode node in wrongPathAux)
+            {
+                var nodeAux = node.Predecessor;
+                wrongPath.Add(node);
+                while (!path.Contains(nodeAux))
+                {
+                    if (!wrongPath.Contains(nodeAux))
+                        wrongPath.Add(nodeAux);
+                    nodeAux = nodeAux.Predecessor;
+                }
+            }
+
             return true;
         }
 
-        private float Heuristica(MazeNode node, MazeNode end)
+        private float Heuristic(MazeNode node, MazeNode end, int neighCount)
         {
-            return Math.Abs(node.Bounds.Location.X - end.Bounds.Location.X) + Math.Abs(node.Bounds.Location.Y - end.Bounds.Location.Y);
+            return Math.Abs(node.Bounds.Location.X - end.Bounds.Location.X) + 
+                   Math.Abs(node.Bounds.Location.Y - end.Bounds.Location.Y) + neighCount;
         }
     }
 }

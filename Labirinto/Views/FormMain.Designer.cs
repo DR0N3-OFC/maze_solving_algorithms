@@ -29,420 +29,86 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.editarMazeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiLineType = new System.Windows.Forms.ToolStripMenuItem();
-            this.arrowAnchorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.diamondAnchorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.flatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.roundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.roundAnchorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.squareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.squareAnchorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.triangleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiLineColor = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiLineWid = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmi1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmi2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmi3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmi4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmi5 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmi6 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmi7 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmi8 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmi9 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmi10 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiResolutColor = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlContent = new System.Windows.Forms.Panel();
-            this.lblElapsedTime = new System.Windows.Forms.Label();
-            this.lblSteps = new System.Windows.Forms.Label();
-            this.btnSolve = new System.Windows.Forms.Button();
-            this.btnCriar = new System.Windows.Forms.Button();
-            this.numTamanhoBlc = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.numAltura = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblDescricaoProjeto = new System.Windows.Forms.Label();
+            this.lblLargura = new System.Windows.Forms.Label();
             this.numLargura = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.picMaze = new System.Windows.Forms.PictureBox();
+            this.lblAltura = new System.Windows.Forms.Label();
+            this.numAltura = new System.Windows.Forms.NumericUpDown();
+            this.lblTamanhoBloco = new System.Windows.Forms.Label();
+            this.numTamanhoBlc = new System.Windows.Forms.NumericUpDown();
+            this.lblSteps = new System.Windows.Forms.Label();
+            this.lblElapsedTime = new System.Windows.Forms.Label();
             this.btnSolve2 = new System.Windows.Forms.Button();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.menuStrip.SuspendLayout();
-            this.pnlContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numTamanhoBlc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numAltura)).BeginInit();
+            this.btnCriar = new System.Windows.Forms.Button();
+            this.lblTituloProjeto = new System.Windows.Forms.Label();
+            this.btnSolve = new System.Windows.Forms.Button();
+            this.pnlContent = new System.Windows.Forms.Panel();
+            this.lblSair = new System.Windows.Forms.Button();
+            this.lblElapsedTime2 = new System.Windows.Forms.Label();
+            this.lblSteps2 = new System.Windows.Forms.Label();
+            this.picBoxCriarLabirinto = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picMaze = new System.Windows.Forms.PictureBox();
+            this.picBoxBuscaInformada = new System.Windows.Forms.PictureBox();
+            this.picBoxBuscaCega = new System.Windows.Forms.PictureBox();
+            this.picBoxConfiguracoes = new System.Windows.Forms.PictureBox();
+            this.picBoxResultado = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.numLargura)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAltura)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTamanhoBlc)).BeginInit();
+            this.pnlContent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxCriarLabirinto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMaze)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxBuscaInformada)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxBuscaCega)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxConfiguracoes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxResultado)).BeginInit();
             this.SuspendLayout();
             // 
-            // menuStrip
-            // 
-            this.menuStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(169)))), ((int)(((byte)(197)))));
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editarMazeToolStripMenuItem});
-            this.menuStrip.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(987, 24);
-            this.menuStrip.TabIndex = 0;
-            this.menuStrip.Text = "menuStrip1";
-            // 
-            // editarMazeToolStripMenuItem
-            // 
-            this.editarMazeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiLineType,
-            this.tsmiLineColor,
-            this.tsmiLineWid,
-            this.tsmiResolutColor});
-            this.editarMazeToolStripMenuItem.Name = "editarMazeToolStripMenuItem";
-            this.editarMazeToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
-            this.editarMazeToolStripMenuItem.Text = "Propriedades";
-            // 
-            // tsmiLineType
-            // 
-            this.tsmiLineType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(169)))), ((int)(((byte)(197)))));
-            this.tsmiLineType.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.arrowAnchorToolStripMenuItem,
-            this.diamondAnchorToolStripMenuItem,
-            this.flatToolStripMenuItem,
-            this.roundToolStripMenuItem,
-            this.roundAnchorToolStripMenuItem,
-            this.squareToolStripMenuItem,
-            this.squareAnchorToolStripMenuItem,
-            this.triangleToolStripMenuItem});
-            this.tsmiLineType.Name = "tsmiLineType";
-            this.tsmiLineType.Size = new System.Drawing.Size(163, 22);
-            this.tsmiLineType.Text = "Tipo da linha";
-            // 
-            // arrowAnchorToolStripMenuItem
-            // 
-            this.arrowAnchorToolStripMenuItem.Name = "arrowAnchorToolStripMenuItem";
-            this.arrowAnchorToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.arrowAnchorToolStripMenuItem.Text = "ArrowAnchor";
-            this.arrowAnchorToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItemLineType_Click);
-            // 
-            // diamondAnchorToolStripMenuItem
-            // 
-            this.diamondAnchorToolStripMenuItem.Name = "diamondAnchorToolStripMenuItem";
-            this.diamondAnchorToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.diamondAnchorToolStripMenuItem.Text = "DiamondAnchor";
-            this.diamondAnchorToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItemLineType_Click);
-            // 
-            // flatToolStripMenuItem
-            // 
-            this.flatToolStripMenuItem.Checked = true;
-            this.flatToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.flatToolStripMenuItem.Name = "flatToolStripMenuItem";
-            this.flatToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.flatToolStripMenuItem.Text = "Flat";
-            this.flatToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItemLineType_Click);
-            // 
-            // roundToolStripMenuItem
-            // 
-            this.roundToolStripMenuItem.Name = "roundToolStripMenuItem";
-            this.roundToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.roundToolStripMenuItem.Text = "Round";
-            this.roundToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItemLineType_Click);
-            // 
-            // roundAnchorToolStripMenuItem
-            // 
-            this.roundAnchorToolStripMenuItem.Name = "roundAnchorToolStripMenuItem";
-            this.roundAnchorToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.roundAnchorToolStripMenuItem.Text = "RoundAnchor";
-            this.roundAnchorToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItemLineType_Click);
-            // 
-            // squareToolStripMenuItem
-            // 
-            this.squareToolStripMenuItem.Name = "squareToolStripMenuItem";
-            this.squareToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.squareToolStripMenuItem.Text = "Square";
-            this.squareToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItemLineType_Click);
-            // 
-            // squareAnchorToolStripMenuItem
-            // 
-            this.squareAnchorToolStripMenuItem.Name = "squareAnchorToolStripMenuItem";
-            this.squareAnchorToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.squareAnchorToolStripMenuItem.Text = "SquareAnchor";
-            this.squareAnchorToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItemLineType_Click);
-            // 
-            // triangleToolStripMenuItem
-            // 
-            this.triangleToolStripMenuItem.Name = "triangleToolStripMenuItem";
-            this.triangleToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.triangleToolStripMenuItem.Text = "Triangle";
-            this.triangleToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItemLineType_Click);
-            // 
-            // tsmiLineColor
-            // 
-            this.tsmiLineColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(169)))), ((int)(((byte)(197)))));
-            this.tsmiLineColor.Name = "tsmiLineColor";
-            this.tsmiLineColor.Size = new System.Drawing.Size(163, 22);
-            this.tsmiLineColor.Text = "Cor da linha";
-            this.tsmiLineColor.Click += new System.EventHandler(this.corDaLinhaToolStripMenuItem_Click);
-            // 
-            // tsmiLineWid
-            // 
-            this.tsmiLineWid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(169)))), ((int)(((byte)(197)))));
-            this.tsmiLineWid.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmi1,
-            this.tsmi2,
-            this.tsmi3,
-            this.tsmi4,
-            this.tsmi5,
-            this.tsmi6,
-            this.tsmi7,
-            this.tsmi8,
-            this.tsmi9,
-            this.tsmi10});
-            this.tsmiLineWid.Name = "tsmiLineWid";
-            this.tsmiLineWid.Size = new System.Drawing.Size(163, 22);
-            this.tsmiLineWid.Text = "Largura da linha";
-            // 
-            // tsmi1
-            // 
-            this.tsmi1.Checked = true;
-            this.tsmi1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.tsmi1.Name = "tsmi1";
-            this.tsmi1.Size = new System.Drawing.Size(86, 22);
-            this.tsmi1.Text = "1";
-            this.tsmi1.Click += new System.EventHandler(this.toolStripMenuItemLineWid_Click);
-            // 
-            // tsmi2
-            // 
-            this.tsmi2.Name = "tsmi2";
-            this.tsmi2.Size = new System.Drawing.Size(86, 22);
-            this.tsmi2.Text = "2";
-            this.tsmi2.Click += new System.EventHandler(this.toolStripMenuItemLineWid_Click);
-            // 
-            // tsmi3
-            // 
-            this.tsmi3.Name = "tsmi3";
-            this.tsmi3.Size = new System.Drawing.Size(86, 22);
-            this.tsmi3.Text = "3";
-            this.tsmi3.Click += new System.EventHandler(this.toolStripMenuItemLineWid_Click);
-            // 
-            // tsmi4
-            // 
-            this.tsmi4.Name = "tsmi4";
-            this.tsmi4.Size = new System.Drawing.Size(86, 22);
-            this.tsmi4.Text = "4";
-            this.tsmi4.Click += new System.EventHandler(this.toolStripMenuItemLineWid_Click);
-            // 
-            // tsmi5
-            // 
-            this.tsmi5.Name = "tsmi5";
-            this.tsmi5.Size = new System.Drawing.Size(86, 22);
-            this.tsmi5.Text = "5";
-            this.tsmi5.Click += new System.EventHandler(this.toolStripMenuItemLineWid_Click);
-            // 
-            // tsmi6
-            // 
-            this.tsmi6.Name = "tsmi6";
-            this.tsmi6.Size = new System.Drawing.Size(86, 22);
-            this.tsmi6.Text = "6";
-            this.tsmi6.Click += new System.EventHandler(this.toolStripMenuItemLineWid_Click);
-            // 
-            // tsmi7
-            // 
-            this.tsmi7.Name = "tsmi7";
-            this.tsmi7.Size = new System.Drawing.Size(86, 22);
-            this.tsmi7.Text = "7";
-            this.tsmi7.Click += new System.EventHandler(this.toolStripMenuItemLineWid_Click);
-            // 
-            // tsmi8
-            // 
-            this.tsmi8.Name = "tsmi8";
-            this.tsmi8.Size = new System.Drawing.Size(86, 22);
-            this.tsmi8.Text = "8";
-            this.tsmi8.Click += new System.EventHandler(this.toolStripMenuItemLineWid_Click);
-            // 
-            // tsmi9
-            // 
-            this.tsmi9.Name = "tsmi9";
-            this.tsmi9.Size = new System.Drawing.Size(86, 22);
-            this.tsmi9.Text = "9";
-            this.tsmi9.Click += new System.EventHandler(this.toolStripMenuItemLineWid_Click);
-            // 
-            // tsmi10
-            // 
-            this.tsmi10.Name = "tsmi10";
-            this.tsmi10.Size = new System.Drawing.Size(86, 22);
-            this.tsmi10.Text = "10";
-            this.tsmi10.Click += new System.EventHandler(this.toolStripMenuItemLineWid_Click);
-            // 
-            // tsmiResolutColor
-            // 
-            this.tsmiResolutColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(169)))), ((int)(((byte)(197)))));
-            this.tsmiResolutColor.Name = "tsmiResolutColor";
-            this.tsmiResolutColor.Size = new System.Drawing.Size(163, 22);
-            this.tsmiResolutColor.Text = "Cor da resolução";
-            this.tsmiResolutColor.Click += new System.EventHandler(this.tsmiResolutColor_Click);
-            // 
-            // pnlContent
-            // 
-            this.pnlContent.Controls.Add(this.btnSolve2);
-            this.pnlContent.Controls.Add(this.lblElapsedTime);
-            this.pnlContent.Controls.Add(this.lblSteps);
-            this.pnlContent.Controls.Add(this.btnSolve);
-            this.pnlContent.Controls.Add(this.btnCriar);
-            this.pnlContent.Controls.Add(this.numTamanhoBlc);
-            this.pnlContent.Controls.Add(this.label4);
-            this.pnlContent.Controls.Add(this.numAltura);
-            this.pnlContent.Controls.Add(this.label3);
-            this.pnlContent.Controls.Add(this.numLargura);
-            this.pnlContent.Controls.Add(this.label1);
-            this.pnlContent.Controls.Add(this.pictureBox2);
-            this.pnlContent.Controls.Add(this.label2);
-            this.pnlContent.Controls.Add(this.picMaze);
-            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Location = new System.Drawing.Point(0, 24);
-            this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Padding = new System.Windows.Forms.Padding(5);
-            this.pnlContent.Size = new System.Drawing.Size(987, 559);
-            this.pnlContent.TabIndex = 1;
-            // 
-            // lblElapsedTime
-            // 
-            this.lblElapsedTime.AutoSize = true;
-            this.lblElapsedTime.BackColor = System.Drawing.Color.Transparent;
-            this.lblElapsedTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblElapsedTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
-            this.lblElapsedTime.Location = new System.Drawing.Point(51, 467);
-            this.lblElapsedTime.Name = "lblElapsedTime";
-            this.lblElapsedTime.Size = new System.Drawing.Size(14, 20);
-            this.lblElapsedTime.TabIndex = 22;
-            this.lblElapsedTime.Text = ".";
-            this.lblElapsedTime.Visible = false;
-            // 
-            // lblSteps
-            // 
-            this.lblSteps.AutoSize = true;
-            this.lblSteps.BackColor = System.Drawing.Color.Transparent;
-            this.lblSteps.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSteps.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
-            this.lblSteps.Location = new System.Drawing.Point(51, 431);
-            this.lblSteps.Name = "lblSteps";
-            this.lblSteps.Size = new System.Drawing.Size(14, 20);
-            this.lblSteps.TabIndex = 21;
-            this.lblSteps.Text = ".";
-            this.lblSteps.Visible = false;
-            // 
-            // btnSolve
-            // 
-            this.btnSolve.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
-            this.btnSolve.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSolve.FlatAppearance.BorderSize = 0;
-            this.btnSolve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSolve.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSolve.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
-            this.btnSolve.Location = new System.Drawing.Point(50, 323);
-            this.btnSolve.Name = "btnSolve";
-            this.btnSolve.Size = new System.Drawing.Size(269, 35);
-            this.btnSolve.TabIndex = 20;
-            this.btnSolve.Text = "Busca Cega";
-            this.btnSolve.UseVisualStyleBackColor = false;
-            this.btnSolve.Click += new System.EventHandler(this.btnSolve_Click);
-            // 
-            // btnCriar
-            // 
-            this.btnCriar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(169)))), ((int)(((byte)(197)))));
-            this.btnCriar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCriar.FlatAppearance.BorderSize = 0;
-            this.btnCriar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCriar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCriar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
-            this.btnCriar.Location = new System.Drawing.Point(50, 264);
-            this.btnCriar.Name = "btnCriar";
-            this.btnCriar.Size = new System.Drawing.Size(269, 35);
-            this.btnCriar.TabIndex = 16;
-            this.btnCriar.Text = "Criar Labirinto";
-            this.btnCriar.UseVisualStyleBackColor = false;
-            this.btnCriar.Click += new System.EventHandler(this.btnCriar_Click);
-            // 
-            // numTamanhoBlc
-            // 
-            this.numTamanhoBlc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(169)))), ((int)(((byte)(197)))));
-            this.numTamanhoBlc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numTamanhoBlc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numTamanhoBlc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
-            this.numTamanhoBlc.Location = new System.Drawing.Point(206, 124);
-            this.numTamanhoBlc.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numTamanhoBlc.Name = "numTamanhoBlc";
-            this.numTamanhoBlc.Size = new System.Drawing.Size(113, 21);
-            this.numTamanhoBlc.TabIndex = 11;
-            this.numTamanhoBlc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numTamanhoBlc.Value = new decimal(new int[] {
-            40,
-            0,
-            0,
-            0});
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
-            this.label4.Location = new System.Drawing.Point(51, 130);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(158, 20);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Tamanho do Bloco";
-            // 
-            // numAltura
-            // 
-            this.numAltura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(169)))), ((int)(((byte)(197)))));
-            this.numAltura.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numAltura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numAltura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
-            this.numAltura.Location = new System.Drawing.Point(206, 208);
-            this.numAltura.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numAltura.Name = "numAltura";
-            this.numAltura.Size = new System.Drawing.Size(113, 21);
-            this.numAltura.TabIndex = 14;
-            this.numAltura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numAltura.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
-            this.label3.Location = new System.Drawing.Point(51, 214);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 20);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Altura";
+            // lblDescricaoProjeto
+            // 
+            this.lblDescricaoProjeto.AutoSize = true;
+            this.lblDescricaoProjeto.BackColor = System.Drawing.Color.Transparent;
+            this.lblDescricaoProjeto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescricaoProjeto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblDescricaoProjeto.Location = new System.Drawing.Point(223, 36);
+            this.lblDescricaoProjeto.Name = "lblDescricaoProjeto";
+            this.lblDescricaoProjeto.Size = new System.Drawing.Size(729, 24);
+            this.lblDescricaoProjeto.TabIndex = 13;
+            this.lblDescricaoProjeto.Text = "GERADOR DE LABIRINTO - FUNDAMENTOS DE SISTEMAS INTELIGENTES";
+            // 
+            // lblLargura
+            // 
+            this.lblLargura.AutoSize = true;
+            this.lblLargura.BackColor = System.Drawing.Color.Transparent;
+            this.lblLargura.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.lblLargura.ForeColor = System.Drawing.Color.White;
+            this.lblLargura.Location = new System.Drawing.Point(104, 132);
+            this.lblLargura.Name = "lblLargura";
+            this.lblLargura.Size = new System.Drawing.Size(86, 23);
+            this.lblLargura.TabIndex = 17;
+            this.lblLargura.Text = "LARGURA";
             // 
             // numLargura
             // 
-            this.numLargura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(169)))), ((int)(((byte)(197)))));
+            this.numLargura.BackColor = System.Drawing.Color.Black;
             this.numLargura.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numLargura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numLargura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
-            this.numLargura.Location = new System.Drawing.Point(206, 166);
+            this.numLargura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numLargura.ForeColor = System.Drawing.Color.White;
+            this.numLargura.Location = new System.Drawing.Point(234, 133);
+            this.numLargura.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
             this.numLargura.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.numLargura.Name = "numLargura";
-            this.numLargura.Size = new System.Drawing.Size(113, 21);
+            this.numLargura.Size = new System.Drawing.Size(67, 21);
             this.numLargura.TabIndex = 12;
             this.numLargura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numLargura.Value = new decimal(new int[] {
@@ -451,69 +117,316 @@
             0,
             0});
             // 
-            // label1
+            // lblAltura
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(51, 172);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 20);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Largura";
+            this.lblAltura.AutoSize = true;
+            this.lblAltura.BackColor = System.Drawing.Color.Transparent;
+            this.lblAltura.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAltura.ForeColor = System.Drawing.Color.White;
+            this.lblAltura.Location = new System.Drawing.Point(108, 168);
+            this.lblAltura.Name = "lblAltura";
+            this.lblAltura.Size = new System.Drawing.Size(76, 23);
+            this.lblAltura.TabIndex = 18;
+            this.lblAltura.Text = "ALTURA";
             // 
-            // pictureBox2
+            // numAltura
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(12, 19);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(47, 43);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
+            this.numAltura.BackColor = System.Drawing.Color.Black;
+            this.numAltura.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numAltura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numAltura.ForeColor = System.Drawing.Color.White;
+            this.numAltura.Location = new System.Drawing.Point(234, 169);
+            this.numAltura.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.numAltura.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numAltura.Name = "numAltura";
+            this.numAltura.Size = new System.Drawing.Size(67, 21);
+            this.numAltura.TabIndex = 14;
+            this.numAltura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numAltura.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
-            // label2
+            // lblTamanhoBloco
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(169)))), ((int)(((byte)(197)))));
-            this.label2.Location = new System.Drawing.Point(70, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(202, 24);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Gerador de Labirinto";
+            this.lblTamanhoBloco.AutoSize = true;
+            this.lblTamanhoBloco.BackColor = System.Drawing.Color.Transparent;
+            this.lblTamanhoBloco.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.lblTamanhoBloco.ForeColor = System.Drawing.Color.White;
+            this.lblTamanhoBloco.Location = new System.Drawing.Point(63, 98);
+            this.lblTamanhoBloco.Name = "lblTamanhoBloco";
+            this.lblTamanhoBloco.Size = new System.Drawing.Size(165, 20);
+            this.lblTamanhoBloco.TabIndex = 19;
+            this.lblTamanhoBloco.Text = "TAMANHO DO BLOCO";
+            // 
+            // numTamanhoBlc
+            // 
+            this.numTamanhoBlc.BackColor = System.Drawing.Color.Black;
+            this.numTamanhoBlc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numTamanhoBlc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numTamanhoBlc.ForeColor = System.Drawing.Color.White;
+            this.numTamanhoBlc.Location = new System.Drawing.Point(234, 98);
+            this.numTamanhoBlc.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numTamanhoBlc.Name = "numTamanhoBlc";
+            this.numTamanhoBlc.Size = new System.Drawing.Size(67, 21);
+            this.numTamanhoBlc.TabIndex = 11;
+            this.numTamanhoBlc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numTamanhoBlc.Value = new decimal(new int[] {
+            40,
+            0,
+            0,
+            0});
+            // 
+            // lblSteps
+            // 
+            this.lblSteps.AutoSize = true;
+            this.lblSteps.BackColor = System.Drawing.Color.Transparent;
+            this.lblSteps.Font = new System.Drawing.Font("Ink Free", 14F, System.Drawing.FontStyle.Bold);
+            this.lblSteps.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.lblSteps.Location = new System.Drawing.Point(59, 447);
+            this.lblSteps.Name = "lblSteps";
+            this.lblSteps.Size = new System.Drawing.Size(15, 23);
+            this.lblSteps.TabIndex = 21;
+            this.lblSteps.Text = ".";
+            this.lblSteps.Visible = false;
+            // 
+            // lblElapsedTime
+            // 
+            this.lblElapsedTime.AutoSize = true;
+            this.lblElapsedTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblElapsedTime.Font = new System.Drawing.Font("Ink Free", 14F, System.Drawing.FontStyle.Bold);
+            this.lblElapsedTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.lblElapsedTime.Location = new System.Drawing.Point(59, 483);
+            this.lblElapsedTime.Name = "lblElapsedTime";
+            this.lblElapsedTime.Size = new System.Drawing.Size(15, 23);
+            this.lblElapsedTime.TabIndex = 22;
+            this.lblElapsedTime.Text = ".";
+            this.lblElapsedTime.Visible = false;
+            // 
+            // btnSolve2
+            // 
+            this.btnSolve2.BackColor = System.Drawing.Color.Transparent;
+            this.btnSolve2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSolve2.FlatAppearance.BorderSize = 0;
+            this.btnSolve2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSolve2.Font = new System.Drawing.Font("Bahnschrift Condensed", 19.5F, System.Drawing.FontStyle.Bold);
+            this.btnSolve2.ForeColor = System.Drawing.Color.DarkGray;
+            this.btnSolve2.Location = new System.Drawing.Point(92, 357);
+            this.btnSolve2.Name = "btnSolve2";
+            this.btnSolve2.Size = new System.Drawing.Size(179, 35);
+            this.btnSolve2.TabIndex = 23;
+            this.btnSolve2.Text = "BUSCA INFORMADA";
+            this.btnSolve2.UseVisualStyleBackColor = false;
+            this.btnSolve2.Click += new System.EventHandler(this.btnSolve2_Click);
+            // 
+            // btnCriar
+            // 
+            this.btnCriar.AutoSize = true;
+            this.btnCriar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCriar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCriar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCriar.FlatAppearance.BorderSize = 0;
+            this.btnCriar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCriar.Font = new System.Drawing.Font("Bahnschrift Condensed", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCriar.ForeColor = System.Drawing.Color.DarkGray;
+            this.btnCriar.Location = new System.Drawing.Point(90, 216);
+            this.btnCriar.Name = "btnCriar";
+            this.btnCriar.Size = new System.Drawing.Size(179, 44);
+            this.btnCriar.TabIndex = 16;
+            this.btnCriar.Text = "CRIAR LABIRINTO";
+            this.btnCriar.UseVisualStyleBackColor = false;
+            this.btnCriar.Click += new System.EventHandler(this.btnCriar_Click);
+            // 
+            // lblTituloProjeto
+            // 
+            this.lblTituloProjeto.AutoSize = true;
+            this.lblTituloProjeto.BackColor = System.Drawing.Color.Transparent;
+            this.lblTituloProjeto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloProjeto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblTituloProjeto.Location = new System.Drawing.Point(173, 8);
+            this.lblTituloProjeto.Name = "lblTituloProjeto";
+            this.lblTituloProjeto.Size = new System.Drawing.Size(818, 25);
+            this.lblTituloProjeto.TabIndex = 26;
+            this.lblTituloProjeto.Text = "UNIVERSIDADE TECNOLÓGICA FEDERAL DO PARANÁ - MEDIANEIRA/2023";
+            // 
+            // btnSolve
+            // 
+            this.btnSolve.BackColor = System.Drawing.Color.Transparent;
+            this.btnSolve.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSolve.FlatAppearance.BorderSize = 0;
+            this.btnSolve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSolve.Font = new System.Drawing.Font("Bahnschrift Condensed", 21F, System.Drawing.FontStyle.Bold);
+            this.btnSolve.ForeColor = System.Drawing.Color.DarkGray;
+            this.btnSolve.Location = new System.Drawing.Point(92, 286);
+            this.btnSolve.Name = "btnSolve";
+            this.btnSolve.Size = new System.Drawing.Size(179, 44);
+            this.btnSolve.TabIndex = 20;
+            this.btnSolve.Text = "BUSCA CEGA";
+            this.btnSolve.UseVisualStyleBackColor = false;
+            this.btnSolve.Click += new System.EventHandler(this.btnSolve_Click);
+            // 
+            // pnlContent
+            // 
+            this.pnlContent.BackColor = System.Drawing.Color.Black;
+            this.pnlContent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlContent.Controls.Add(this.lblSair);
+            this.pnlContent.Controls.Add(this.lblElapsedTime2);
+            this.pnlContent.Controls.Add(this.lblSteps2);
+            this.pnlContent.Controls.Add(this.btnSolve);
+            this.pnlContent.Controls.Add(this.lblTituloProjeto);
+            this.pnlContent.Controls.Add(this.btnCriar);
+            this.pnlContent.Controls.Add(this.picBoxCriarLabirinto);
+            this.pnlContent.Controls.Add(this.pictureBox1);
+            this.pnlContent.Controls.Add(this.btnSolve2);
+            this.pnlContent.Controls.Add(this.lblElapsedTime);
+            this.pnlContent.Controls.Add(this.lblSteps);
+            this.pnlContent.Controls.Add(this.numTamanhoBlc);
+            this.pnlContent.Controls.Add(this.lblTamanhoBloco);
+            this.pnlContent.Controls.Add(this.numAltura);
+            this.pnlContent.Controls.Add(this.lblAltura);
+            this.pnlContent.Controls.Add(this.numLargura);
+            this.pnlContent.Controls.Add(this.lblLargura);
+            this.pnlContent.Controls.Add(this.lblDescricaoProjeto);
+            this.pnlContent.Controls.Add(this.picMaze);
+            this.pnlContent.Controls.Add(this.picBoxBuscaInformada);
+            this.pnlContent.Controls.Add(this.picBoxBuscaCega);
+            this.pnlContent.Controls.Add(this.picBoxConfiguracoes);
+            this.pnlContent.Controls.Add(this.picBoxResultado);
+            this.pnlContent.Location = new System.Drawing.Point(0, 0);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlContent.Size = new System.Drawing.Size(1001, 635);
+            this.pnlContent.TabIndex = 1;
+            // 
+            // lblSair
+            // 
+            this.lblSair.BackColor = System.Drawing.Color.Transparent;
+            this.lblSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.lblSair.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblSair.FlatAppearance.BorderSize = 0;
+            this.lblSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblSair.Font = new System.Drawing.Font("Bahnschrift Condensed", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSair.ForeColor = System.Drawing.Color.LightGray;
+            this.lblSair.Location = new System.Drawing.Point(977, -9);
+            this.lblSair.Name = "lblSair";
+            this.lblSair.Size = new System.Drawing.Size(27, 37);
+            this.lblSair.TabIndex = 32;
+            this.lblSair.Text = "X";
+            this.lblSair.UseVisualStyleBackColor = false;
+            this.lblSair.Click += new System.EventHandler(this.lblSair_Click);
+            this.lblSair.MouseLeave += new System.EventHandler(this.lblSair_MouseLeave);
+            this.lblSair.MouseHover += new System.EventHandler(this.lblSair_MouseHover);
+            // 
+            // lblElapsedTime2
+            // 
+            this.lblElapsedTime2.AutoSize = true;
+            this.lblElapsedTime2.BackColor = System.Drawing.Color.Transparent;
+            this.lblElapsedTime2.Font = new System.Drawing.Font("Ink Free", 14F, System.Drawing.FontStyle.Bold);
+            this.lblElapsedTime2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.lblElapsedTime2.Location = new System.Drawing.Point(57, 573);
+            this.lblElapsedTime2.Name = "lblElapsedTime2";
+            this.lblElapsedTime2.Size = new System.Drawing.Size(15, 23);
+            this.lblElapsedTime2.TabIndex = 30;
+            this.lblElapsedTime2.Text = ".";
+            this.lblElapsedTime2.Visible = false;
+            // 
+            // lblSteps2
+            // 
+            this.lblSteps2.AutoSize = true;
+            this.lblSteps2.BackColor = System.Drawing.Color.Transparent;
+            this.lblSteps2.Font = new System.Drawing.Font("Ink Free", 14F, System.Drawing.FontStyle.Bold);
+            this.lblSteps2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.lblSteps2.Location = new System.Drawing.Point(57, 537);
+            this.lblSteps2.Name = "lblSteps2";
+            this.lblSteps2.Size = new System.Drawing.Size(15, 23);
+            this.lblSteps2.TabIndex = 29;
+            this.lblSteps2.Text = ".";
+            this.lblSteps2.Visible = false;
+            // 
+            // picBoxCriarLabirinto
+            // 
+            this.picBoxCriarLabirinto.Image = global::Labirinto.Properties.Resources.BotaoFSI;
+            this.picBoxCriarLabirinto.Location = new System.Drawing.Point(43, 207);
+            this.picBoxCriarLabirinto.Name = "picBoxCriarLabirinto";
+            this.picBoxCriarLabirinto.Size = new System.Drawing.Size(269, 63);
+            this.picBoxCriarLabirinto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxCriarLabirinto.TabIndex = 25;
+            this.picBoxCriarLabirinto.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Labirinto.Properties.Resources.CC_UTFPR_;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(80, 79);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
             // 
             // picMaze
             // 
-            this.picMaze.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.picMaze.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
-            this.picMaze.Location = new System.Drawing.Point(379, 5);
+            this.picMaze.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.picMaze.Location = new System.Drawing.Point(365, 78);
             this.picMaze.Name = "picMaze";
             this.picMaze.Padding = new System.Windows.Forms.Padding(3);
-            this.picMaze.Size = new System.Drawing.Size(603, 549);
+            this.picMaze.Size = new System.Drawing.Size(611, 533);
             this.picMaze.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picMaze.TabIndex = 10;
             this.picMaze.TabStop = false;
             // 
-            // btnSolve2
+            // picBoxBuscaInformada
             // 
-            this.btnSolve2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
-            this.btnSolve2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSolve2.FlatAppearance.BorderSize = 0;
-            this.btnSolve2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSolve2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSolve2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
-            this.btnSolve2.Location = new System.Drawing.Point(50, 381);
-            this.btnSolve2.Name = "btnSolve2";
-            this.btnSolve2.Size = new System.Drawing.Size(269, 35);
-            this.btnSolve2.TabIndex = 23;
-            this.btnSolve2.Text = "Busca Informada";
-            this.btnSolve2.UseVisualStyleBackColor = false;
-            this.btnSolve2.Click += new System.EventHandler(this.btnSolve2_Click);
+            this.picBoxBuscaInformada.Image = ((System.Drawing.Image)(resources.GetObject("picBoxBuscaInformada.Image")));
+            this.picBoxBuscaInformada.Location = new System.Drawing.Point(43, 345);
+            this.picBoxBuscaInformada.Name = "picBoxBuscaInformada";
+            this.picBoxBuscaInformada.Size = new System.Drawing.Size(269, 63);
+            this.picBoxBuscaInformada.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxBuscaInformada.TabIndex = 28;
+            this.picBoxBuscaInformada.TabStop = false;
+            // 
+            // picBoxBuscaCega
+            // 
+            this.picBoxBuscaCega.Image = ((System.Drawing.Image)(resources.GetObject("picBoxBuscaCega.Image")));
+            this.picBoxBuscaCega.Location = new System.Drawing.Point(43, 276);
+            this.picBoxBuscaCega.Name = "picBoxBuscaCega";
+            this.picBoxBuscaCega.Size = new System.Drawing.Size(269, 63);
+            this.picBoxBuscaCega.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxBuscaCega.TabIndex = 27;
+            this.picBoxBuscaCega.TabStop = false;
+            // 
+            // picBoxConfiguracoes
+            // 
+            this.picBoxConfiguracoes.Image = global::Labirinto.Properties.Resources.baixados__3_;
+            this.picBoxConfiguracoes.Location = new System.Drawing.Point(35, 90);
+            this.picBoxConfiguracoes.Name = "picBoxConfiguracoes";
+            this.picBoxConfiguracoes.Size = new System.Drawing.Size(297, 108);
+            this.picBoxConfiguracoes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxConfiguracoes.TabIndex = 31;
+            this.picBoxConfiguracoes.TabStop = false;
+            // 
+            // picBoxResultado
+            // 
+            this.picBoxResultado.Image = global::Labirinto.Properties.Resources.BackResult3;
+            this.picBoxResultado.Location = new System.Drawing.Point(24, 423);
+            this.picBoxResultado.Name = "picBoxResultado";
+            this.picBoxResultado.Size = new System.Drawing.Size(321, 195);
+            this.picBoxResultado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxResultado.TabIndex = 33;
+            this.picBoxResultado.TabStop = false;
+            this.picBoxResultado.Visible = false;
             // 
             // FormMain
             // 
@@ -521,71 +434,56 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(64)))), ((int)(((byte)(79)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(987, 583);
+            this.ClientSize = new System.Drawing.Size(1000, 630);
             this.Controls.Add(this.pnlContent);
-            this.Controls.Add(this.menuStrip);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Maze";
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
+            this.Text = "Gerador de Labirinto";
+            ((System.ComponentModel.ISupportInitialize)(this.numLargura)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAltura)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTamanhoBlc)).EndInit();
             this.pnlContent.ResumeLayout(false);
             this.pnlContent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numTamanhoBlc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numAltura)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numLargura)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxCriarLabirinto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMaze)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxBuscaInformada)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxBuscaCega)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxConfiguracoes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxResultado)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem editarMazeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tsmiLineType;
-        private System.Windows.Forms.Panel pnlContent;
-        private System.Windows.Forms.Button btnSolve;
-        private System.Windows.Forms.Button btnCriar;
-        private System.Windows.Forms.NumericUpDown numTamanhoBlc;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numAltura;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numLargura;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox picBoxBuscaCega;
+        private System.Windows.Forms.PictureBox picBoxBuscaInformada;
         private System.Windows.Forms.PictureBox picMaze;
-        private System.Windows.Forms.ToolStripMenuItem arrowAnchorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem diamondAnchorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem flatToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem roundToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem roundAnchorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem squareToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem squareAnchorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem triangleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tsmiLineColor;
-        private System.Windows.Forms.ToolStripMenuItem tsmiLineWid;
-        private System.Windows.Forms.ToolStripMenuItem tsmi1;
-        private System.Windows.Forms.ToolStripMenuItem tsmi2;
-        private System.Windows.Forms.ToolStripMenuItem tsmi3;
-        private System.Windows.Forms.ToolStripMenuItem tsmi4;
-        private System.Windows.Forms.ToolStripMenuItem tsmi5;
-        private System.Windows.Forms.ToolStripMenuItem tsmi6;
-        private System.Windows.Forms.ToolStripMenuItem tsmi7;
-        private System.Windows.Forms.ToolStripMenuItem tsmi8;
-        private System.Windows.Forms.ToolStripMenuItem tsmi9;
-        private System.Windows.Forms.ToolStripMenuItem tsmi10;
-        private System.Windows.Forms.ToolStripMenuItem tsmiResolutColor;
+        private System.Windows.Forms.Label lblDescricaoProjeto;
+        private System.Windows.Forms.Label lblLargura;
+        private System.Windows.Forms.NumericUpDown numLargura;
+        private System.Windows.Forms.Label lblAltura;
+        private System.Windows.Forms.NumericUpDown numAltura;
+        private System.Windows.Forms.Label lblTamanhoBloco;
+        private System.Windows.Forms.NumericUpDown numTamanhoBlc;
         private System.Windows.Forms.Label lblSteps;
         private System.Windows.Forms.Label lblElapsedTime;
         private System.Windows.Forms.Button btnSolve2;
-        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picBoxCriarLabirinto;
+        private System.Windows.Forms.Button btnCriar;
+        private System.Windows.Forms.Label lblTituloProjeto;
+        private System.Windows.Forms.Button btnSolve;
+        private System.Windows.Forms.Panel pnlContent;
+        private System.Windows.Forms.Label lblElapsedTime2;
+        private System.Windows.Forms.Label lblSteps2;
+        private System.Windows.Forms.PictureBox picBoxConfiguracoes;
+        private System.Windows.Forms.Button lblSair;
+        private System.Windows.Forms.PictureBox picBoxResultado;
     }
 }
 

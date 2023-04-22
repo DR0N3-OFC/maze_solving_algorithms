@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Labirinto.Models
 {
-    public class MyPriorityQueue<T>
+    public class PriorityNodeQueue<T>
     {
         private List<(T item, float priority)> heap = new List<(T, float)>();
         public HashSet<T> UnorderedList = new HashSet<T>();

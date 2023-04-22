@@ -17,36 +17,24 @@ namespace Labirinto.Models
 
         private int direction = 0;
 
-        // Custo de caminho do nó
-        public float Custo = 0;
-        public float Heuristica;
+        public float Cost = 0;
+        public float Heuristic;
 
         public float F
         {
             get
             {
-                if (Heuristica != -1 && Custo != -1)
-                    return Heuristica + Custo;
+                if (Heuristic != -1 && Cost != -1)
+                    return Heuristic + Cost;
                 else
                     return -1;
             }
         }
 
-        
-
-        // Os vizinhos do nó na ordem norte, sul, leste, oeste.
         public MazeNode[] Neighbors = new MazeNode[4];
-
-
-        // O predecessor do Spanning Tree
         public MazeNode Predecessor = null;
-
-
-        // Os limites do nó
         public Rectangle Bounds;
 
-
-        // Retorna o centro deste nó.
         public Point Center
         {
             get
@@ -59,13 +47,11 @@ namespace Labirinto.Models
 
         public int Direction { get => direction; set => direction = value; }
 
-        // Construtor.
         public MazeNode(int x, int y, int wid, int hgt)
         {
             Bounds = new Rectangle(x, y, wid, hgt);
         }
 
-        // Desenhe as paredes que não cruzam um link predecessor.
         public void DrawWalls(Graphics gr, Pen pen)
         {
             for (int side = 0; side < 4; side++)
@@ -79,10 +65,6 @@ namespace Labirinto.Models
             }
         }
             
-
-        
-
-        // Desenhe um círculo no centro do nó.
         public void DrawCenter(Graphics gr, Brush brush, int cellSize)
         {
             float size = cellSize / 3;
@@ -92,7 +74,6 @@ namespace Labirinto.Models
             gr.FillEllipse(brush, cx - size / 2, cy - size / 2, size, size);
         }
 
-        //Paredes do labirinto
         private void DrawWall(Graphics gr, Pen pen, int side, int offset)
         {
             switch (side)

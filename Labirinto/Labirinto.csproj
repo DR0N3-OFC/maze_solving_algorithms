@@ -48,11 +48,11 @@
   <ItemGroup>
     <Compile Include="Controllers\HeuristicSolveController.cs" />
     <Compile Include="Controllers\MazeController.cs" />
-    <Compile Include="Controllers\SolveController.cs" />
-    <Compile Include="Models\MazeLink.cs" />
+    <Compile Include="Controllers\BlindSolveController.cs" />
+    <Compile Include="Models\MazeConnection.cs" />
     <Compile Include="Models\MazeNode.cs" />
-    <Compile Include="Models\MyPriorityQueue.cs" />
-    <Compile Include="Models\MyStack.cs" />
+    <Compile Include="Models\PriorityNodeQueue.cs" />
+    <Compile Include="Models\NodeStack.cs" />
     <Compile Include="Views\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +87,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\CC-UTFPR-.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baixados %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotaoFSI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackResult3.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace Labirinto.Models
 {
-    public class MyStack<T> // PILHA GENERICA
+    public class NodeStack<T>
     {
-        T[] items = new T[0]; //ARRAY
-        private int size; // VARIAVELTAMANHO 
+        T[] items = new T[0];
+        private int size;
 
         public int Size { get => size; set => size = value; }
 
-        public void Push(T value) //Insere na PILHA
+        public void Push(T value)
         {
-            if (Size == items.Count()) // COMPARA O TAMANHO COM ITENS 
+            if (Size == items.Count())
             {
                 int newlength = Size == 0 ? 4 : Size * 2;
-                T[] newarray = new T[newlength]; //NOVO TAMANHO ARRAY
-                items.CopyTo(newarray, 0); // COPIA ITENS PARA NOVO ARRAY
+                T[] newarray = new T[newlength];
+                items.CopyTo(newarray, 0);
                 items = newarray;
             }
             items[Size] = value;
@@ -27,7 +27,7 @@ namespace Labirinto.Models
         }
         
 
-        public T Pop() // remove o ultimo inserido NA PILHA
+        public T Pop()
         {
             if (Size == 0)
             {
@@ -38,7 +38,7 @@ namespace Labirinto.Models
         }
 
 
-        public T Peek() // mostra o primeiro
+        public T Peek()
         {
             if (Size == 0)
             {

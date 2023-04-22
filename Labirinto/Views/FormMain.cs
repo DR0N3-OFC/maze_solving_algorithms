@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Net.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,112 +20,37 @@ namespace Labirinto
         public FormMain()
         {
             InitializeComponent();
+            btnSolve.Enabled = false;
+            btnSolve2.Enabled = false;
         }
 
-        //Trabalho elaborado por Guilherme Paitax e Lucas Corsi , elaborando um labirinto utilizando kruskal algorithm (Sapnning Tree)
-        // e a solução utilizando Pilha
-
-        private int Xmin, Ymin, CellSize; // tamanho especificado pelo usuario
+        private int Xmin, Ymin, CellSize;
         private MazeNode[,] nodes;
         private Color backgroundColor = Color.White;
-        private Brush resultColor = Brushes.MediumSlateBlue;
+        private Brush resultColor = Brushes.LightGreen;
+        private Brush wrongPathColor = Brushes.OrangeRed;
+        private Brush wrongPathColor2 = Brushes.HotPink;
         private LineCap lineCap = LineCap.Flat;
         private int lineWid = 1;
-
-        //Altera Cor das paredes do labirinto
-        private void corDaLinhaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ColorDialog cd = new ColorDialog();
-
-            if (cd.ShowDialog(this) == DialogResult.OK)
-            {
-                backgroundColor = cd.Color;
-            }
-        }
-
-        //Altera a largura das paredes do labirinto
-        private void toolStripMenuItemLineWid_Click(object sender, EventArgs e)
-        {
-
-            ToolStripMenuItem tsmi = sender as ToolStripMenuItem;
-
-            lineWid = Convert.ToInt32(tsmi.Text);
-            CheckedFalse(tsmiLineWid);
-            tsmi.Checked = true;
-            tsmiLineWid.Checked = true;
-        }
-
-        //Desmarca os itens do menu
-        private void CheckedFalse(ToolStripMenuItem toolStripMenu)
-        {
-            foreach (ToolStripMenuItem tsmi in toolStripMenu.DropDownItems)
-            {
-                tsmi.Checked = false;
-            }
-        }
-
-        //Altera o tipo da linha das paredes do labirinto
-        private void ToolStripMenuItemLineType_Click(object sender, EventArgs e)
-        {
-            ToolStripMenuItem tsmi = sender as ToolStripMenuItem;
-
-            switch (tsmi.Text)
-            {
-                case "ArrowAnchor":
-                    lineCap = LineCap.ArrowAnchor;
-                    break;
-                case "DiamondAnchor":
-                    lineCap = LineCap.DiamondAnchor;
-                    break;
-                case "Flat":
-                    lineCap = LineCap.Flat;
-                    break;
-                case "Round":
-                    lineCap = LineCap.Round;
-                    break;
-                case "RoundAnchor":
-                    lineCap = LineCap.RoundAnchor;
-                    break;
-                case "Square":
-                    lineCap = LineCap.Square;
-                    break;
-                case "SquareAnchor":
-                    lineCap = LineCap.SquareAnchor;
-                    break;
-                case "Triangle":
-                    lineCap = LineCap.Triangle;
-                    break;
-            }
-
-            CheckedFalse(tsmiLineType);
-            tsmi.Checked = true;
-            tsmiLineType.Checked = true;
-        }
-
-        //Altera a cor dos pontos do caminho do labirinto
-        private void tsmiResolutColor_Click(object sender, EventArgs e)
-        {
-            ColorDialog cd = new ColorDialog();
-
-            if (cd.ShowDialog(this) == DialogResult.OK)
-            {
-                
-                resultColor = new SolidBrush(cd.Color);
-            }
-        }
+        private Bitmap mazeImage;
 
         private void btnSolve_Click(object sender, EventArgs e)
-        {// metodo utilizando pilha para resolver
+        {
             List<MazeNode> path = new List<MazeNode>();
-            SolveController solver = new SolveController(nodes);
+            List<MazeNode> wrongPath = new List<MazeNode>();
+            BlindSolveController solver = new BlindSolveController(nodes);
             Stopwatch stopwatch = new Stopwatch();
+            picMaze.Image = mazeImage;
             btnSolve.Enabled = false;
 
+            picBoxResultado.Visible = true;
+
             stopwatch.Start();
-            if (solver.Solve(ref path))
+            if (solver.FindPath(ref path, ref wrongPath))
             {
                 stopwatch.Stop();
                 Bitmap bitmap = new Bitmap(picMaze.Image);
+                picMaze.Image = MazeController.DisplayPath(wrongPath, CellSize, bitmap, wrongPathColor);
                 picMaze.Image = MazeController.DisplayPath(path, CellSize, bitmap, resultColor);
 
                 lblSteps.Visible = true;
@@ -137,33 +63,64 @@ namespace Labirinto
             else MessageBox.Show("Impossivel resolver o Labirinto!");
         }
 
+        private void lblSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void lblSair_MouseHover(object sender, EventArgs e)
+        {
+            lblSair.ForeColor = Color.Red;
+        }
+
+        private void lblSair_MouseLeave(object sender, EventArgs e)
+        {
+            lblSair.ForeColor = Color.LightGray;
+        }
+
         private void btnSolve2_Click(object sender, EventArgs e)
         {
             List<MazeNode> path = new List<MazeNode>();
+            List<MazeNode> wrongPath = new List<MazeNode>();
             HeuristicSolveController solver = new HeuristicSolveController(nodes);
             Stopwatch stopwatch = new Stopwatch();
+            picMaze.Image = mazeImage;
             btnSolve2.Enabled = false;
 
+            if (picBoxResultado.Visible == false) {
+                picBoxResultado.Visible = true;
+            }
+
             stopwatch.Start();
-            if (solver.FindPath(ref path))
+            if (solver.FindPath(ref path, ref wrongPath))
             {
                 stopwatch.Stop();
                 Bitmap bitmap = new Bitmap(picMaze.Image);
+                picMaze.Image = MazeController.DisplayPath(wrongPath, CellSize, bitmap, wrongPathColor2);
                 picMaze.Image = MazeController.DisplayPath(path, CellSize, bitmap, resultColor);
 
-                lblSteps.Visible = true;
-                lblSteps.Text = $"Número de Passos: {solver.steps}.";
+                lblSteps2.Visible = true;
+                lblSteps2.Text = $"Número de Passos: {solver.steps}.";
 
                 long elapsedMilliseconds = stopwatch.ElapsedMilliseconds;
-                lblElapsedTime.Visible = true;
-                lblElapsedTime.Text = $"Duração da busca: {elapsedMilliseconds} ms.";
+                lblElapsedTime2.Visible = true;
+                lblElapsedTime2.Text = $"Duração da busca: {elapsedMilliseconds} ms.";
             }
             else MessageBox.Show("Impossivel resolver o Labirinto!");
         }
 
         private void btnCriar_Click(object sender, EventArgs e)
         {
-             //DESENHO DO LABIRINTO
+            lblElapsedTime.Visible = false;
+            lblElapsedTime.Text = "";
+            lblSteps.Visible = false;
+            lblSteps.Text = "";
+            lblElapsedTime2.Visible = false;
+            lblElapsedTime2.Text = "";
+            lblSteps2.Visible = false;
+            lblSteps2.Text = "";
+            picBoxResultado.Visible = false;
+
             int wid = int.Parse(numLargura.Text);
             int hgt = int.Parse(numAltura.Text);
 
@@ -173,14 +130,12 @@ namespace Labirinto
             Ymin = (picMaze.ClientSize.Height - hgt * CellSize) / 2;
 
 
-            // Construtor dos   nós do labirinto.
             nodes = MazeController.MazeNodes(wid, hgt, Ymin, Xmin, CellSize);
 
-            // Inicializa o kruskal Algorithm (Spanning TREE)
             MazeController.FindSpanningTree(ref nodes[0, 0]);
 
-            // Mostra o Maze 
-            picMaze.Image = MazeController.DisplayMaze(nodes, picMaze.ClientSize.Width, picMaze.ClientSize.Height, CellSize, backgroundColor, lineCap, lineWid);
+            mazeImage = MazeController.DisplayMaze(nodes, picMaze.ClientSize.Width, picMaze.ClientSize.Height, CellSize, backgroundColor, lineCap, lineWid);
+            picMaze.Image = mazeImage;
 
             btnSolve.Visible = true;
             btnSolve.Enabled = true;

@@ -10,12 +10,11 @@ using System.Xml.Linq;
 
 namespace Labirinto.Controllers
 {
-    class MazeController  // controle do Maze
+    class MazeController
     {
 
         public static MazeNode[,] MazeNodes(int wid, int hgt, int Ymin, int Xmin, int CellSize)
         {
-            // Cria os nós.
             MazeNode[,] nodes = new MazeNode[hgt, wid];
 
             for (int i = 0; i < hgt; ++i)
@@ -28,7 +27,6 @@ namespace Labirinto.Controllers
                 }
             }
 
-            // Inicialize os neighbors dos nós.
             for (int i = 0; i < hgt; ++i)
             {
                 for (int j = 0; j < wid; ++j)
@@ -40,7 +38,6 @@ namespace Labirinto.Controllers
                 }
             }
 
-            // Retorna os nodes.
             return nodes;
         }
 
@@ -48,54 +45,40 @@ namespace Labirinto.Controllers
         {
             Random rand = new Random();
 
-
-            // Defina o predecessor do nó raiz para que saibamos que ele está na árvore.
             root.Predecessor = root;
 
-         
-            List<MazeLink> links = new List<MazeLink>();
+            List<MazeConnection> links = new List<MazeConnection>();
 
-            
             foreach (MazeNode neighbor in root.Neighbors)
             {
                 if (neighbor != null)
-                    links.Add(new MazeLink(root, neighbor));
+                    links.Add(new MazeConnection(root, neighbor));
             }
 
-
-            // Adiciona os outros nós à árvore.
             while (links.Count > 0)
             {
-
-                // Escolha um link aleatório.
                 int link_num = rand.Next(0, links.Count);
-                MazeLink link = links[link_num];
+                MazeConnection link = links[link_num];
                 links.RemoveAt(link_num);
 
-
-                // Adicione este link à árvore.
                 MazeNode to_node = link.ToNode;
                 link.ToNode.Predecessor = link.FromNode;
 
-
-                // Remove quaisquer links da lista desse ponto
                 for (int i = links.Count - 1; i >= 0; i--)
                 {
                     if (links[i].ToNode.Predecessor != null)
                         links.RemoveAt(i);
                 }
 
-
-                // Adiciona os links do to_node à lista 
                 foreach (MazeNode neighbor in to_node.Neighbors)
                 {
                     if ((neighbor != null) && (neighbor.Predecessor == null))
-                        links.Add(new MazeLink(to_node, neighbor));
+                        links.Add(new MazeConnection(to_node, neighbor));
                 }
             }
 
         }
-        // controle de desenho wall
+        
         public static Bitmap DisplayMaze(MazeNode[,] nodes, int picWid, int picHgt, int cellSize, Color color, LineCap lineCap, int lineWid)
         {
             Pen pen = new Pen(color, lineWid)
@@ -127,7 +110,7 @@ namespace Labirinto.Controllers
 
             return bm;
         }
-        //controle dos  pontos
+
         public static Bitmap DisplayPath(List<MazeNode> path, int cellSize, Bitmap image, Brush color)
         {
             Bitmap bm = image;
